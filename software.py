@@ -121,3 +121,21 @@ average_dict["age 30+"] = average(total_30)
 
 print(average_dict)
 
+
+#Question 6
+#Given a DNA sequence produce the reverse compliment
+
+sequence = input("What is the DNA sequence? ")
+compliment = ""
+
+for base in sequence:
+    if base == "A":
+        compliment = compliment + "T"
+    elif base == "T":
+        compliment = compliment + "A"
+    elif base == "G":
+        compliment = compliment + "C"
+    else:
+        compliment = compliment + "G"
+
+print(compliment)
