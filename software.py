@@ -125,7 +125,7 @@ print(average_dict)
 #Question 6
 #Given a DNA sequence produce the reverse compliment
 
-sequence = input("What is the DNA sequence? ")
+sequence = input("What is the DNA sequence? ")[::-1]
 compliment = ""
 
 for base in sequence:
@@ -139,3 +139,22 @@ for base in sequence:
         compliment = compliment + "G"
 
 print(compliment)
+
+#Question 7
+#Given a list of DNA sequences in align_sequences.txt write a script to determine the number of sequences that match the reference:
+
+REF = 'GATCTAAAAAAAGCCCATACGGCGCGCA'
+
+counter = 0
+
+with open("align_sequences.txt", "r") as align_seq:
+    for line in align_seq.readlines():
+        if sequence in REF:
+            counter += 1
+            print(sequence)
+    print(counter)
+
+
+with open("align_sequences.txt", "r") as align:
+    print(sum(line.count(REF) for line in align))
+    
